@@ -94,3 +94,11 @@ if __name__ == "__main__" :
 	print ("Average time in system                (ts) :    ", errTS)
 	print ("Probability of no customers in system (P0) :    ", errIdle, '\n')
 
+
+	# Write results to .csv file
+	fw = open ("HW3_analysis.csv", 'a+')
+	fw.write (str(busy)+','+str(idle)+','+str(avgQP)+','+str(avgP)+','+str(waitTavg)+','+str(staySysTavg)+'\n')
+	fw.write (str(lo)+','+str(1-lo)+','+str(NL)+','+str(NS)+','+str(TL)+','+str(TS)+'\n')
+	fw.write (str(errUtil)+','+str(errIdle)+','+str(errNL)+','+str(errNS)+','+str(errTL)+','+str(errTS)+'\n\n')
+	fw.close()
+
